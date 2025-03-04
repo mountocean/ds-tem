@@ -327,11 +327,11 @@ void search_t_id(TN* s)//按航班号查询
 void search_t_from(TN* s)//按始发站查询 
 {
 	TN* p;
-	char pstart[STR_LEN] = {0};//定义始发站
+	char pstart[STR_LEN] = { 0 };//定义始发站
 	p = s->next;
 	int flag = 0;
 	printf("请输入您需要查找的航班信息的始发站：");
-	scanf_s("%s", &pstart,50);
+	scanf_s("%s", &pstart, 50);
 	printf("\n\t\t\t\t******-----查询结果-----******\n");
 	printf("\t航班号\t始发站\t到达站\t起飞时间\t降落时间\t票价(元)\t票数（张）\n");
 	while (p)//p不为空时进入循环
@@ -340,11 +340,12 @@ void search_t_from(TN* s)//按始发站查询
 		{
 			Info(p);
 			flag = 1;//找到发车站相等的航班将flag置为1
-			if (p->next == NULL)//如果p->next等于NULL则跳出循环
-				break;
-			else
-				p = p->next;//next不为空则继续迭代
 		}
+		if (p->next == NULL)//如果p->next等于NULL则跳出循环
+			break;
+		else
+			p = p->next;//next不为空则继续迭代
+
 	}
 	if (p == NULL || flag == 0)//为空时或者flag等于0时
 	{
