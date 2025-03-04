@@ -17,7 +17,8 @@ int main()
 	loadticket(u);
 	loaduser(e);
 	system("color F3");//设置默认控制台前景和背景颜色,可以根据自己喜欢的颜色修改
-	printf("\n\t-----------------------欢迎来到火车票服务系统-----------------------\n");
+	printf("\n\t-----------------------青岛流亭国际机场系统-----------------------\n");
+	printf("\n\t----------TsingTao LiuTing International Airport System-----------\n");
 	printf("\n\t\t\t*********************************\n");
 	printf("\n\t\t\t\t1.我是用户\n\t\t\t\t2.我是管理员\n\t\t\t\t");
 	printf("\n\t\t\t*********************************\n\t\t\t");

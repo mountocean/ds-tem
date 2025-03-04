@@ -1,2 +1,29 @@
 ﻿  testlll.cpp
-  airline-order-system.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\x64\Debug\airline-order-system.exe
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(61,25): error C2440: “初始化”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(61,25):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(353,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(353,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(354,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(354,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(355,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(355,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(366,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(366,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(367,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(367,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(368,15): error C2440: “=”: 无法从“const char [7]”转换为“char *”
+      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\airline-order-system\testlll.cpp(368,15):
+      从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+  
