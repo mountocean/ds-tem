@@ -4,11 +4,13 @@
 #include"string.h"
 #include"time.h"
 #include"stdlib.h"
+#include <string>
+
 #define STR_LEN  50//字符串长度
 
-typedef struct train
+typedef struct train//定义列车信息结构体
 {
-	int stationId; //车站号
+	char stationId[7]; //车站号
 	char from[STR_LEN]; //车票起点
 	char to[STR_LEN]; //车票终点
 	char stime[16];//出发时间
@@ -27,10 +29,10 @@ typedef struct userticket
 	char name[STR_LEN];//姓名 
 	char id[STR_LEN];//身份证号 
 	char tele[STR_LEN];//用户电话 
-	int trainId;//用户所购的列车号 
+	char trainId[6];//用户所购的列车号 
 	int order;//订单编号
 	int usernum;//用户编号
-	char dlivery[200];//车票配送地址
+	
 }Userticket;
 typedef struct TrainNode  //定义列车节点 
 {

@@ -92,10 +92,10 @@ void except_id(TN* p, TN* u)//录入航班号查重
 	q = u;//用于存放服务端头结点
 	while (q != NULL)
 	{
-		if (p->data.stationId == q->data.stationId)//找到航班号相等的则提示服务端人员重新输入
+		if(!strcmp(p->data.stationId,q->data.stationId))//找到航班号相等的则提示服务端人员重新输入
 		{
 			printf("\t当前航班已存在,请重新输入：");
-			scanf_s("%d", &p->data.stationId);
+			scanf_s("%s", p->data.stationId,7);
 			except_id(p, u);
 		}
 		else
@@ -137,7 +137,7 @@ void luru(TN* u)//文件信息录入
 		exit(0);
 	}//p等于NULL则开辟空间失败
 	printf("\n\t1.请输入航班号（六位）：");//首先输入航班号，因为航班号是每个飞机的专有属性
-	scanf_s("%d", &p->data.stationId);
+	scanf_s("%s", p->data.stationId,7);
 	except_id(p, u);//录入的航班号查重，防止航班号相同
 	printf("\t2.请输入起飞机场名称：");
 	scanf_s("%s", p->data.from,50);
@@ -166,12 +166,12 @@ void orderTicket(TN* s, UN* u,int log)		//订票服务
 	UN* q;//定义用户端结点
 	int n;
 	p = s;
-	int t_id;//保存需要输入的航班号
+	char t_id[7];//保存需要输入的航班号
 	system("cls");
 	printf("\n\t---------------------------------航班订单填写---------------------------------\n");
 	printf("\t请输入您需要预订的航班号：");
-	scanf_s("%d", &t_id);//首先输入航班号
-	while (p != NULL && p->data.stationId != t_id)//循环终止条件为找到航班号相同的航班或者走到尾节点
+	scanf_s("%s",t_id,7);//首先输入航班号
+	while (p != NULL && strcmp(p->data.stationId,t_id)  )//循环终止条件为找到航班号相同的航班或者走到尾节点
 	{
 		p = p->next;//不断循环迭代
 	}
@@ -200,15 +200,14 @@ void orderTicket(TN* s, UN* u,int log)		//订票服务
 			scanf_s("%s", r->data.id,50);
 			printf("\t请输入您的手机号码：");
 			scanf_s("%s", r->data.tele,50);
-			printf("\t车票配送地址（无需配送则填无）：");
-			scanf_s("%s", r->data.dlivery,200);
 			r->data.usernum = log;
-			r->data.trainId = t_id;
+			 strcpy(r->data.trainId, t_id);
+
 			p->data.ticket = p->data.ticket - 1;//用户订票成功后需要将该航班总票数-1
 			srand((int)time(NULL));//利用时间戳的方式来指定随机数
 			n = rand() % 8999 + 1000;//用随机数的方式设计一个四位数的订单编号
 			r->data.order = n;
-			printf("\t订票成功，您已成功预订一张航班号为%d的车票,", r->data.trainId);
+			printf("\t订票成功，您已成功预订一张航班号为%s的车票,", r->data.trainId);
 			printf("订单编号为%d\n", r->data.order);
 			r->next = NULL;
 			q->next = r;
@@ -228,11 +227,11 @@ void refundTicket(TN* s, UN* u)//退票服务
 	p = s;//定义服务端头结点
 	r = u;//将r置为用户端的头结点
 	t = u;
-	int input_t_id;//定义购票时的航班号
+	char input_t_id[7];//定义购票时的航班号
 	system("cls");
 	printf("\n\t---------------------------------航班退票界面---------------------------------\n");
 	printf("\t请输入您需要退票的航班号：");
-	scanf_s("%d", &input_t_id);
+	scanf_s("%s",input_t_id,7);
 	printf("\t请输入您的身份证号：");
 	scanf_s("%s", id,50);
 	printf("\t请输入您的订单编号：");
@@ -240,12 +239,12 @@ void refundTicket(TN* s, UN* u)//退票服务
 	//以上输入的身份证号订单编号，都是用户所独有专有的信息，不可能会重复
 	while (r != NULL)
 	{
-		if (strcmp(r->data.id, id) == 0 && input_t_id == r->data.trainId && ord == r->data.order)//注意身份证号要用strcmp函数去比较
+		if (strcmp(r->data.id, id) == 0 && !strcmp(input_t_id, r->data.trainId) && ord == r->data.order)//注意身份证号要用strcmp函数去比较
 		{
 			printf("\t您当前的订票信息如下：\n");
 			printf("\t名字：%s\n", r->data.name);
 			printf("\t电话号码为：%s\n", r->data.tele);
-			printf("\t航班号码为:%d\n", r->data.trainId);
+			printf("\t航班号码为:%s\n", r->data.trainId);
 			break;//找到完全匹配的用户时，把用户其余信息打印，然后跳出该循环
 		}
 		else
@@ -260,7 +259,7 @@ void refundTicket(TN* s, UN* u)//退票服务
 	}
 	else//不是以空结束的循环，说明找到了用户的购票信息
 	{
-		while (p != NULL && p->data.stationId != input_t_id)
+		while (p != NULL && !strcmp(p->data.stationId,input_t_id))
 		{
 			p = p->next;//利用该循环去迭代找出用户订购的航班
 		}
@@ -294,7 +293,7 @@ void refundTicket(TN* s, UN* u)//退票服务
 }
 void Info(TN* s)//航班信息显示 
 {
-	printf("\t%5d", s->data.stationId);
+	printf("\t%7s", s->data.stationId);
 	printf("%8s", s->data.from);
 	printf("%8s", s->data.to);
 	printf("%10s", s->data.stime);
@@ -304,16 +303,16 @@ void Info(TN* s)//航班信息显示
 }
 void search_t_id(TN* s)//按航班号查询 
 {
-	int num;//定义航班号
+	char num[7];//定义航班号
 	TN* p;
 	p = s;//定义航班头结点
 	printf("请输入您需要查找的航班信息的航班号：");
-	scanf_s("%d", &num);
+	scanf_s("%s",num,7);
 	printf("\n\t\t\t\t******-----查询结果-----******\n");
 	printf("\t航班号\t始发站\t到达站\t起飞时间\t降落时间\t票价(元)\t票数（张）\n");
 	while (p)
 	{
-		if (p->data.stationId == num)//航班号一样时跳出循环
+		if (!strcmp(p->data.stationId,num))//航班号一样时跳出循环
 		{
 			Info(p);
 			break;
@@ -325,7 +324,7 @@ void search_t_id(TN* s)//按航班号查询
 		printf("\t\t未找到该航班号的信息!\n");
 	}
 }
-void search_t_from(TN* s)//按发车站查询 
+void search_t_from(TN* s)//按始发站查询 
 {
 	TN* p;
 	char pstart[STR_LEN] = {0};//定义始发站
@@ -337,7 +336,7 @@ void search_t_from(TN* s)//按发车站查询
 	printf("\t航班号\t始发站\t到达站\t起飞时间\t降落时间\t票价(元)\t票数（张）\n");
 	while (p)//p不为空时进入循环
 	{
-		if (strcmp(p->data.from, pstart) == 0)//发车站相等时进入该if语句
+		if (strcmp(p->data.from, pstart) == 0)//始发站相等时进入该if语句
 		{
 			Info(p);
 			flag = 1;//找到发车站相等的航班将flag置为1
@@ -409,17 +408,16 @@ void searchticket(UN* u, int log)//已购票信息查询
 	else
 	{
 		printf("您的购票信息如下：\n\n");
-		printf("航班号\t姓名\t\t  身份证号\t   电话号码\t     订单编号\t\t\t\t\t    车票配送地址\n");
+		printf("航班号\t姓名\t\t  身份证号\t   电话号码\t     订单编号\t\t\t\t\t ");
 		while (q != NULL)
 		{
 			if (q->data.usernum == log)
 			{
-				printf("%5d", q->data.trainId);
+				printf("%7s", q->data.trainId);
 				printf("%8s", q->data.name);
 				printf("%21s", q->data.id);
 				printf("%17s", q->data.tele);
 				printf("%18d", q->data.order);
-				printf("%50s\n", q->data.dlivery);
 				i++;
 			}
 			q = q->next;
@@ -446,7 +444,7 @@ void allp_show(TN* s, UN* u)//查询用户购票信息
 		printf("航班号\t姓名\t\t  身份证号\t   电话号码\t     订单编号\t\t\t\t\t ");
 		while (r != NULL)
 		{
-			printf("%5d", r->data.trainId);
+			printf("%7s", r->data.trainId);
 			printf("%8s", r->data.name);
 			printf("%21s", r->data.id);
 			printf("%17s", r->data.tele);
@@ -483,10 +481,10 @@ void except_update_id(TN* s)//修改航班号查重
 	q = s->next;
 	while (q)
 	{
-		if (s->data.stationId == q->data.stationId)
+		if(!strcmp(s->data.stationId,q->data.stationId))
 		{
 			printf("\t当前航班班次已存在,请重新输入：");
-			scanf_s("%d", &s->data.stationId);
+			scanf_s("%s", s->data.stationId,7);
 			except_update_id(s);
 		}
 		else
@@ -496,7 +494,7 @@ void except_update_id(TN* s)//修改航班号查重
 void updateInfo(TN* s)//航班信息修改 
 {
 	system("cls");
-	int num;//定义需要修改的航班号
+	char num[7];//定义需要修改的航班号
 	int n;//定义需要修改的信息
 	TN* p;
 	p = s->next;
@@ -507,8 +505,8 @@ void updateInfo(TN* s)//航班信息修改
 	else
 	{
 		printf("\t请输入需要修改航班信息的航班号：");
-		scanf_s("%d", &num);
-		while (p->data.stationId != num)
+		scanf_s("%s", num,7);
+		while (strcmp(p->data.stationId,num))
 		{
 			p = p->next;
 			if (p == NULL)
@@ -528,7 +526,7 @@ void updateInfo(TN* s)//航班信息修改
 			{
 			case 1:
 				printf("\t请输入变更后的航班号:");
-				scanf_s("%d", &p->data.stationId);
+				scanf_s("%s", p->data.stationId,7);
 				except_update_id(p);//航班号查重
 				break;
 			case 2:
@@ -571,7 +569,8 @@ void updateInfo(TN* s)//航班信息修改
 }
 void deletetrain(TN* s)//航班信息删除
 {
-	int num,i;
+	char num[7];
+	int i;
 	TN* p,* q;
 	p = s;
 	q = s;
@@ -584,10 +583,10 @@ void deletetrain(TN* s)//航班信息删除
 		system("cls");
 		printf("\n\t---------------------------------航班信息删除---------------------------------\n");
 		printf("\t请输入需要删除航班信息的航班号：");
-		scanf_s("%d", &num);
+		scanf_s("%s",num,7);
 		while (1)
 		{
-			if (num == p->data.stationId)
+			if (!strcmp(num,p->data.stationId))
 			{
 				break;
 			}
@@ -651,7 +650,7 @@ void loadtrain(TN* s)//航班数据载入程序
 		while (!feof(fp))
 		{
 			TN* p = (TN*)malloc(sizeof(TN));
-			fscanf(fp, "%d %s %s %s %s %d %d\n",&p->data.stationId, p->data.from, p->data.to, p->data.stime, p->data.rtime, &p->data.money, &p->data.ticket);
+			fscanf(fp, "%s %s %s %s %s %d %d\n",p->data.stationId, p->data.from, p->data.to, p->data.stime, p->data.rtime, &p->data.money, &p->data.ticket);
 			p->next = NULL;
 			r->next = p;
 			r = p;
@@ -704,7 +703,7 @@ void loadticket(UN* u)//购票数据载入程序
 		while (!feof(fp))
 		{
 			UN* p = (UN*)malloc(sizeof(UN));
-			fscanf(fp, "%s %s %s %d %d %d %s\n",  p->data.name, p->data.id, p->data.tele, &p->data.trainId, &p->data.order, &p->data.usernum,p->data.dlivery);
+			fscanf(fp, "%s %s %s %s %d %d\n",  p->data.name, p->data.id, p->data.tele, p->data.trainId, &p->data.order, &p->data.usernum);
 			p->next = NULL;
 			r->next = p;
 			r = p;
@@ -727,7 +726,7 @@ void savetrain(TN* s)//保存航班数据
 	while (p)//p不为空时继续写入到文件
 	{
 		char arr[1024] = { 0 };
-		sprintf(arr, "%d %s %s %s %s %d %d\n", p->data.stationId, p->data.from, p->data.to, p->data.stime, p->data.rtime, p->data.money, p->data.ticket);
+		sprintf(arr, "%s %s %s %s %s %d %d\n", p->data.stationId, p->data.from, p->data.to, p->data.stime, p->data.rtime, p->data.money, p->data.ticket);
 		fwrite(arr, 1, strlen(arr), fp);//二进制的形式写入到文件中
 		p = p->next;
 	}
@@ -769,7 +768,7 @@ void saveticket(UN* u)//保存购票数据
 	while (p)//p不为空时继续写入到文件
 	{
 		char arr[1024] = { 0 };
-		sprintf(arr, "%s %s %s %d %d %d %s\n", p->data.name, p->data.id, p->data.tele, p->data.trainId, p->data.order, p->data.usernum,p->data.dlivery);
+		sprintf(arr, "%s %s %s %s %d %d\n", p->data.name, p->data.id, p->data.tele, p->data.trainId, p->data.order, p->data.usernum);
 		fwrite(arr, 1, strlen(arr), fp);//二进制的形式写入到文件中
 		p = p->next;
 	}
