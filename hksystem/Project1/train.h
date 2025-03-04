@@ -10,7 +10,7 @@
 
 typedef struct train//定义列车信息结构体
 {
-	char stationId[7]; //车站号
+	char stationId[7]; //航班号
 	char from[STR_LEN]; //车票起点
 	char to[STR_LEN]; //车票终点
 	char stime[16];//出发时间
@@ -29,8 +29,8 @@ typedef struct userticket
 	char name[STR_LEN];//姓名 
 	char id[STR_LEN];//身份证号 
 	char tele[STR_LEN];//用户电话 
-	char trainId[6];//用户所购的列车号 
-	int order;//订单编号
+	char trainId[7];//用户所购的列车号 
+	int order;//效验码
 	int usernum;//用户编号
 	
 }Userticket;

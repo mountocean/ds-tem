@@ -1,8 +1,2 @@
-lwq11 lwq11 1
-qzy qzy11 2
-qzy11 qzy11 3
-lq11 lq1111 4
-lq lq111 5
-bilibili 123456 6
 root root 7
-1 1 8
+adolf adolf 11
