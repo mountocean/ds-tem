@@ -207,7 +207,7 @@ void orderTicket(TN* s, UN* u,int log)		//订票服务
 			srand((int)time(NULL));//利用时间戳的方式来指定随机数
 			n = rand() % 8999 + 1000;//用随机数的方式设计一个四位数的效验码
 			r->data.order = n;
-			printf("\t订票成功，您已成功预订一张航班号为%s的车票,", r->data.planeId);
+			printf("\t订票成功，您已成功预订一张航班号为%s的机票,", r->data.planeId);
 			printf("您的效验码为%d，凭此码退票，请牢记\n", r->data.order);
 			r->next = NULL;
 			q->next = r;
@@ -339,7 +339,7 @@ void search_t_from(TN* s)//按始发机场查询
 		if (strcmp(p->data.from, pstart) == 0)//始发机场相等时进入该if语句
 		{
 			Info(p);
-			flag = 1;//找到发车机场相等的航班将flag置为1
+			flag = 1;//找到起飞机场相等的航班将flag置为1
 		}
 		if (p->next == NULL)//如果p->next等于NULL则跳出循环
 			break;
@@ -409,7 +409,7 @@ void searchticket(UN* u, int log)//已购票信息查询
 	else
 	{
 		printf("您的购票信息如下：\n\n");
-		printf("航班号\t姓名\t\t  身份证号\t   电话号码\t     订单编号\t\t\t\t\t\n ");
+		printf("航班号\t  姓名\t\t\t  身份证号\t   电话号码\t     订单编号\t\t\t\t\t\n ");
 		while (q != NULL)
 		{
 			if (q->data.usernum == log)
@@ -418,7 +418,7 @@ void searchticket(UN* u, int log)//已购票信息查询
 				printf("%8s", q->data.name);
 				printf("%21s", q->data.id);
 				printf("%17s", q->data.tele);
-				printf("%18d", q->data.order);
+				printf("%18d\n", q->data.order);
 				i++;
 			}
 			q = q->next;
@@ -445,11 +445,11 @@ void allp_show(TN* s, UN* u)//查询用户购票信息
 		printf("航班号\t  姓名\t\t  身份证号\t   电话号码\t     订单编号\t\n ");
 		while (r != NULL)
 		{
-			printf("%6s", r->data.planeId);
+			printf("%7s", r->data.planeId);
 			printf("%8s", r->data.name);
 			printf("%21s", r->data.id);
 			printf("%17s", r->data.tele);
-			printf("%18d", r->data.order);
+			printf("%18d\n", r->data.order);
 			r = r->next;
 		}
 	}
@@ -495,7 +495,7 @@ void except_update_id(TN* s)//修改航班号查重
 void updateInfo(TN* s)//航班信息修改 
 {
 	system("cls");
-	char num[6];//定义需要修改的航班号
+	char num[7];//定义需要修改的航班号
 	int n;//定义需要修改的信息
 	TN* p;
 	p = s->next;
@@ -506,8 +506,8 @@ void updateInfo(TN* s)//航班信息修改
 	else
 	{
 		printf("\t请输入需要修改航班信息的航班号：");
-		scanf_s("%s", num,6);
-		while (strcmp(p->data.stationId,num))
+		scanf_s("%s", num,7);
+		while (strcmp(p->data.stationId,num)!=0)
 		{
 			p = p->next;
 			if (p == NULL)
@@ -570,7 +570,7 @@ void updateInfo(TN* s)//航班信息修改
 }
 void deleteplane(TN* s)//航班信息删除
 {
-	char num[6];
+	char num[7];
 	int i;
 	TN* p,* q;
 	p = s;
@@ -584,10 +584,10 @@ void deleteplane(TN* s)//航班信息删除
 		system("cls");
 		printf("\n\t---------------------------------航班信息删除---------------------------------\n");
 		printf("\t请输入需要删除航班信息的航班号：");
-		scanf_s("%s",num,6);
+		scanf_s("%s",num,7);
 		while (1)
 		{
-			if (!strcmp(num,p->data.stationId))
+			if (strcmp(num,p->data.stationId)==0)
 			{
 				break;
 			}
