@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="train.cpp">
+    <ClCompile Include="plane.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="test.cpp">
@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="train.h">
+    <ClInclude Include="plane.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
