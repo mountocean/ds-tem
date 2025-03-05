@@ -8,7 +8,7 @@
 
 #define STR_LEN  50//字符串长度
 
-typedef struct plane//定义列车信息结构体
+typedef struct train//定义列车信息结构体
 {
 	char stationId[7]; //航班号
 	char from[STR_LEN]; //车票起点
@@ -17,7 +17,7 @@ typedef struct plane//定义列车信息结构体
 	char rtime[16];//到达时间
 	int money; //票价
 	int ticket;//票数
-}plane;
+}Train;
 typedef struct appuser
 {
 	char appname[STR_LEN];//用户名
@@ -29,15 +29,15 @@ typedef struct userticket
 	char name[STR_LEN];//姓名 
 	char id[STR_LEN];//身份证号 
 	char tele[STR_LEN];//用户电话 
-	char planeId[7];//用户所购的列车号 
+	char trainId[7];//用户所购的列车号 
 	int order;//效验码
 	int usernum;//用户编号
 	
 }Userticket;
-typedef struct planeNode  //定义列车节点 
+typedef struct TrainNode  //定义列车节点 
 {
-	plane data;
-	struct planeNode* next;
+	Train data;
+	struct TrainNode* next;
 }TN;
 typedef struct UserNode	//定义购票信息链表 
 {
@@ -70,10 +70,10 @@ void all_show(TN* s);//查询全部列车
 void allp_show(TN* s, UN* u);//查询用户购票信息
 void Info(TN* s);//列车信息显示 
 void luru(TN* s);//列车信息录入 
-void deleteplane(TN* s);//列车信息删除
-void loadplane(TN* s);//列车数据载入程序
+void deletetrain(TN* s);//列车信息删除
+void loadtrain(TN* s);//列车数据载入程序
 void loaduser(AU* e);//用户数据载入程序
 void loadticket(UN* u);//购票数据载入程序
-void saveplane(TN* s);//保存列车数据
+void savetrain(TN* s);//保存列车数据
 void saveuser(AU* e);//保存用户数据
 void saveticket(UN* u);//保存购票数据
