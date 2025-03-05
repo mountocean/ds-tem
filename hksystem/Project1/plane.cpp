@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
-#include"train.h"
+#include"plane.h"
 #include"stdlib.h"
 
 void usermenu()//用户菜单函数 
@@ -157,7 +157,7 @@ void luru(TN* u)//文件信息录入
 	q->next = p;//把新开辟的结点链接到尾结点上
 	q = p;//最后更新一下尾节点位置
 	printf("\t录入成功！\t\n");
-	savetrain(u);
+	saveplane(u);
 	system("pause");
 }
 void orderTicket(TN* s, UN* u,int log)		//订票服务 
@@ -201,20 +201,20 @@ void orderTicket(TN* s, UN* u,int log)		//订票服务
 			printf("\t请输入您的手机号码：");
 			scanf_s("%s", r->data.tele,50);
 			r->data.usernum = log;
-			strcpy(r->data.trainId,t_id);
+			strcpy(r->data.planeId,t_id);
 
 			p->data.ticket = p->data.ticket - 1;//用户订票成功后需要将该航班总票数-1
 			srand((int)time(NULL));//利用时间戳的方式来指定随机数
 			n = rand() % 8999 + 1000;//用随机数的方式设计一个四位数的效验码
 			r->data.order = n;
-			printf("\t订票成功，您已成功预订一张航班号为%s的车票,", r->data.trainId);
+			printf("\t订票成功，您已成功预订一张航班号为%s的车票,", r->data.planeId);
 			printf("您的效验码为%d，凭此码退票，请牢记\n", r->data.order);
 			r->next = NULL;
 			q->next = r;
 			q = r;
 		}
 	}
-	savetrain(s);
+	saveplane(s);
 	saveticket(u);
 	system("pause");
 }
@@ -239,12 +239,12 @@ void refundTicket(TN* s, UN* u)//退票服务
 	//以上输入的身份证号效验码，都是用户所独有专有的信息，不可能会重复
 	while (r != NULL)
 	{
-		if ( strcmp(r->data.id,id) == 0 && strcmp(input_t_id, r->data.trainId) == 0 && ord == r->data.order)//注意身份证号要用strcmp函数去比较
+		if ( strcmp(r->data.id,id) == 0 && strcmp(input_t_id, r->data.planeId) == 0 && ord == r->data.order)//注意身份证号要用strcmp函数去比较
 		{
 			printf("\t您当前的订票信息如下：\n");
 			printf("\t名字：%s\n", r->data.name);
 			printf("\t电话号码为：%s\n", r->data.tele);
-			printf("\t航班号码为:%s\n", r->data.trainId);
+			printf("\t航班号码为:%s\n", r->data.planeId);
 			break;//找到完全匹配的用户时，把用户其余信息打印，然后跳出该循环
 		}
 		else
@@ -259,7 +259,7 @@ void refundTicket(TN* s, UN* u)//退票服务
 	}
 	else//不是以空结束的循环，说明找到了用户的购票信息
 	{
-		while (p != NULL && !(strcmp(p->data.stationId,input_t_id)==0 && strcmp(input_t_id, r->data.trainId) == 0 && ord == r->data.order))
+		while (p != NULL && !(strcmp(p->data.stationId,input_t_id)==0 && strcmp(input_t_id, r->data.planeId) == 0 && ord == r->data.order))
 		{
 			p = p->next;//利用该循环去迭代找出用户订购的航班
 		}
@@ -285,7 +285,7 @@ void refundTicket(TN* s, UN* u)//退票服务
 			}
 			free(r);//将此退票用户结点free掉
 			printf("\t**退票成功，感谢使用!**\n");
-			savetrain(s);
+			saveplane(s);
 			saveticket(u);
 		}
 	}
@@ -414,7 +414,7 @@ void searchticket(UN* u, int log)//已购票信息查询
 		{
 			if (q->data.usernum == log)
 			{
-				printf("%7s", q->data.trainId);
+				printf("%7s", q->data.planeId);
 				printf("%8s", q->data.name);
 				printf("%21s", q->data.id);
 				printf("%17s", q->data.tele);
@@ -445,7 +445,7 @@ void allp_show(TN* s, UN* u)//查询用户购票信息
 		printf("航班号\t  姓名\t\t  身份证号\t   电话号码\t     订单编号\t\n ");
 		while (r != NULL)
 		{
-			printf("%6s", r->data.trainId);
+			printf("%6s", r->data.planeId);
 			printf("%8s", r->data.name);
 			printf("%21s", r->data.id);
 			printf("%17s", r->data.tele);
@@ -562,13 +562,13 @@ void updateInfo(TN* s)//航班信息修改
 			if (n >= 1 && n <= 7)//如果n输入合法则修改成功
 			{
 				printf("\t**修改成功**\n");
-				savetrain(s);
+				saveplane(s);
 			}
 		}
 	}
 	system("pause");
 }
-void deletetrain(TN* s)//航班信息删除
+void deleteplane(TN* s)//航班信息删除
 {
 	char num[6];
 	int i;
@@ -632,7 +632,7 @@ void deletetrain(TN* s)//航班信息删除
 	}
 	system("pause");
 }
-void loadtrain(TN* s)//航班数据载入程序
+void loadplane(TN* s)//航班数据载入程序
 {
 	TN* r = (TN*)malloc(sizeof(TN));
 	if (!r)
@@ -642,7 +642,7 @@ void loadtrain(TN* s)//航班数据载入程序
 	FILE* fp;
 	s->next = NULL;
 	r = s;
-	if ((fp = fopen("train.txt", "rb+")) == NULL)
+	if ((fp = fopen("plane.txt", "rb+")) == NULL)
 	{
 		printf("\n\t\t\t********航班数据导入失败！*********\n");
 	}
@@ -704,7 +704,7 @@ void loadticket(UN* u)//购票数据载入程序
 		while (!feof(fp))
 		{
 			UN* p = (UN*)malloc(sizeof(UN));
-			fscanf(fp, "%s %s %s %s %d %d\n",  p->data.name, p->data.id, p->data.tele, p->data.trainId, &p->data.order, &p->data.usernum);
+			fscanf(fp, "%s %s %s %s %d %d\n",  p->data.name, p->data.id, p->data.tele, p->data.planeId, &p->data.order, &p->data.usernum);
 			p->next = NULL;
 			r->next = p;
 			r = p;
@@ -712,12 +712,12 @@ void loadticket(UN* u)//购票数据载入程序
 	}
 	fclose(fp);
 }
-void savetrain(TN* s)//保存航班数据
+void saveplane(TN* s)//保存航班数据
 {
 	TN* p;
 	FILE* fp;
 	p = s->next;
-	if ((fp = fopen("train.txt", "wb")) == NULL)
+	if ((fp = fopen("plane.txt", "wb")) == NULL)
 	{
 		printf("\t********航班数据保存失败！*********\n");
 		exit(0);
@@ -769,7 +769,7 @@ void saveticket(UN* u)//保存购票数据
 	while (p)//p不为空时继续写入到文件
 	{
 		char arr[1024] = { 0 };
-		sprintf(arr, "%s %s %s %s %d %d\n", p->data.name, p->data.id, p->data.tele, p->data.trainId, p->data.order, p->data.usernum);
+		sprintf(arr, "%s %s %s %s %d %d\n", p->data.name, p->data.id, p->data.tele, p->data.planeId, p->data.order, p->data.usernum);
 		fwrite(arr, 1, strlen(arr), fp);//二进制的形式写入到文件中
 		p = p->next;
 	}

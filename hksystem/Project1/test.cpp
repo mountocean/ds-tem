@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include"train.h"
+#include"plane.h"
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 	s->next = NULL;
 	u->next = NULL;
 	e->next = NULL;//next置为NULL
-	loadtrain(s);
+	loadplane(s);
 	loadticket(u);
 	loaduser(e);
 	system("color F3");//设置默认控制台前景和背景颜色,可以根据自己喜欢的颜色修改
@@ -93,7 +93,7 @@ int main()
 			case 4:
 				updateInfo(s); break;
 			case 5:
-				deletetrain(s); break;
+				deleteplane(s); break;
 			case 6:
 				exit(0); break;
 			default:
