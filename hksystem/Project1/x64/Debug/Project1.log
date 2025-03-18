@@ -1,2 +1,5 @@
 ﻿  test.cpp
-  Project1.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\LuckyAnJun\DS_practice\hksystem\x64\Debug\Project1.exe
+  plane.cpp
+  正在生成代码...
+  LINK : 没有找到 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\hksystem\x64\Debug\Project1.exe 或上一个增量链接没有生成它；正在执行完全链接
+  Project1.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\hksystem\x64\Debug\Project1.exe

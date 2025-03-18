@@ -1,4 +1,5 @@
 ﻿  FileName.cpp
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\FileName.cpp(27,21): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\FileName.cpp(33,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  LINK : 没有找到 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\x64\Debug\jisuanqi.exe 或上一个增量链接没有生成它；正在执行完全链接
   jisuanqi.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\x64\Debug\jisuanqi.exe
