@@ -5,6 +5,16 @@ using namespace std;
 stack<char> opt;     //操作符栈
 stack<double> val;   //操作数栈
 
+//多项式求值所用结构
+struct PolyNode {
+	int coefficient;  // 系数
+	int exponent;     // 指数
+	PolyNode* next;   // 指向下一个节点
+};
+// 头指针
+PolyNode* head = nullptr;
+
+
 //求阶乘所用数组
 int LargeNumberFactorial[1000] = { 0 };
 
@@ -33,7 +43,9 @@ bool isValidMatrix(const vector<vector<int>>& mat);		//验证矩阵有效性
 vector<vector<int>> addMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//＋矩阵
 vector<vector<int>> subtractMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//-矩阵
 vector<vector<int>> multiplyMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//*矩阵
-
+void insertTerm(int coef, int exp);//多项式求值函数
+void printPolynomial();//多项式求值函数
+void freePolynomial();// 释放链表内存
 
 int main()
 {
@@ -42,7 +54,7 @@ int main()
 	cout << "选择模式: 1-普通计算 2-答题模式 3-退出\n";
 	while (true) {
 		int choice;
-		cout << "请选择模式: 1-普通计算 2-答题模式 3-矩阵模式 4-计算三角函数 5-退出\n";
+		cout << "请选择模式: 1-普通计算 2-答题模式 3-矩阵模式 4-计算三角函数 5-计算多项式 6-退出\n";
 		cin >> choice;
 		if (choice == 2) quiz_mode();
 		//判断是否三角函数和反三角函数并求值
@@ -50,6 +62,7 @@ int main()
 				//输入表达式	
 				string init_exp;
 				cout << "---请输入三角函数表达式:";
+				cout << "   格式 cos(30) 30为弧度rad" << endl;
 				cin >> init_exp;
 
 				double res = 0;
@@ -77,45 +90,73 @@ int main()
 				cng_exp.clear();
 				change(init_exp, cng_exp);	//转换为后缀表达式
 				compute(cng_exp);//计算后缀表达式
+				double stdans = val.top();
+				cout << "结果为:" << (double)stdans << endl;
 		}
 		else if (choice == 3) {
 			Matrix();
 		}
+		else if (choice == 5) {
+			// 头指针
+			PolyNode* head = nullptr;
+			int coef, exp;
+
+			cout << "请输入多项式的系数和指数（输入 0 0 结束）：" << endl;
+			while (true) {
+				cin >> coef >> exp;
+				if (coef == 0 && exp == 0) break; // 结束输入
+				insertTerm(coef, exp);
+			}
+
+			cout << "化简后的多项式：" << endl;
+			printPolynomial();
+
+			// 释放内存
+			freePolynomial();
+		}
 		else {
+			cout << "感谢您的使用..." << endl;
 			return 0;
 		}
 	}
 }
 void Matrix() {
 	cout << "矩阵运算选择" << endl;
-	cout << "1.矩阵加法\t2.矩阵减法\t3.矩阵乘法" << endl;
+	cout << "1.矩阵加法\t2.矩阵减法\t3.矩阵乘法\t4.退出" << endl;
 	int signal;
 	cin >> signal;
+	if (!(signal == 1 || signal == 2 || signal == 3)) {
+		return;
+	}
 	// 输入第一个矩阵
 	int rowsA, colsA;
 	auto matrixA = inputMatrix(rowsA, colsA, "Matrix A");
 
+	cout << "如果为矩阵乘法，应当满足第一个矩阵的列数等于第二个矩阵的行数" << endl;
 	// 输入第二个矩阵
 	int rowsB, colsB;
 	auto matrixB = inputMatrix(rowsB, colsB, "Matrix B");
-
-	// 双重验证
-	if (!isValidMatrix(matrixA) || !isValidMatrix(matrixB)) {
-		cerr << "Error: Invalid matrix structure\n";
-		exit(0);
-	}
+	vector<vector<int>> mat;
 	if (signal == 1) {
-	
+	 mat=addMatrix(matrixA, matrixB);
 	}
 	else if (signal == 2) {
-
+	mat=subtractMatrix(matrixA, matrixB);
 	}
 	else if (signal == 3) {
-
+	mat=multiplyMatrix(matrixA, matrixB);
 	}
 	else {
 		exit(0);
 	}
+	cout << "运算完成后的矩阵为" << endl;
+	for (int i = 0; i < mat.size(); i++) {
+		for (int j = 0; j < mat[0].size(); j++) {
+			cout << mat[i][j] << " ";
+		}
+		cout << endl;
+	}
+
 	Matrix();
 }
 #include <iostream>
@@ -145,14 +186,7 @@ vector<vector<int>> inputMatrix(int& rows, int& cols, const string& name) {
 }
 
 // 验证矩阵有效性
-bool isValidMatrix(const vector<vector<int>>& mat) {
-//	if (mat.empty()) return false;
-//	size_t cols = mat.size();
-//	for (const auto& row : mat) {
-//		if (row.size() != cols) return false;
-//	}
-	return true;
-}
+
 
 /*为每一个操作符返回一个数，数代表了优先级*/
 int level(char theOpt)
@@ -485,12 +519,15 @@ string generate_random_expression(int num_terms = 5) {
 }
 // 进行答题模式
 void quiz_mode() {
+	vector<pair<string, double>> question_bank;  // 存储 (题目, 答案)
+
 	while (true) {
 		string question = generate_random_expression();
-		cout << "计算: " << question << " = ? (输入exit退出)\n";
+		cout << "计算: " << question << " = ? (输入 exit 退出)\n";
 		string answer;
 		cin >> answer;
-		if (answer == "exit") break;
+
+		if (answer == "exit") break;  // 退出循环
 
 		string postfix;
 		change(question, postfix);
@@ -507,16 +544,32 @@ void quiz_mode() {
 		else {
 			cout << "错误，正确答案是: " << correct_answer << "\n";
 		}
-	}
-}
 
+		// 记录到题库
+		question_bank.push_back({ question, correct_answer });
+	}
+
+	// 退出循环后，保存题目和答案到文件
+	ofstream file("题库.txt", ios::app);  // 以追加模式打开文件
+	if (!file) {
+		cerr << "文件打开失败！\n";
+		return;
+	}
+
+	for (const auto& entry : question_bank) {
+		file << entry.first << " = " << fixed << setprecision(6) << entry.second << "\n";
+	}
+
+	file.close();
+	cout << "本次生成的题目已保存到 题库.txt\n";
+}
 
 // 矩阵加法
 vector<vector<int>> addMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
-	int rows = A.size(), cols = A.size();
+	int rows = A.size(), cols = A[0].size();
 	vector<vector<int>> result(rows, vector<int>(cols));
 
-	if (A.size() != B.size() || A.size() != B.size()) {
+	if (A.size() != B.size() ) {
 		cerr << "Error: Matrix dimensions mismatch for addition!" << endl;
 		return {};
 	}
@@ -530,10 +583,10 @@ vector<vector<int>> addMatrix(const vector<vector<int>>& A, const vector<vector<
 }
 // 矩阵减法
 vector<vector<int>> subtractMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
-	int rows = A.size(), cols = A.size();
+	int rows = A.size(), cols = A[0].size();
 	vector<vector<int>> result(rows, vector<int>(cols));
 
-	if (A.size() != B.size() || A.size() != B.size()) {
+	if (A.size() != B.size()) {
 		cerr << "Error: Matrix dimensions mismatch for addition!" << endl;
 		return {};
 	}
@@ -548,9 +601,9 @@ vector<vector<int>> subtractMatrix(const vector<vector<int>>& A, const vector<ve
 // 矩阵乘法 
 //矩阵乘法要求第一个矩阵的列数等于第二个矩阵的行数，结果矩阵的维度为 (A行数 × B列数)。
 vector<vector<int>> multiplyMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
-	int rowsA = A.size(), colsA = A.size();
-	int colsB = B.size();
-	vector<vector<int>> result(rowsA, vector<int>(colsB, 0));
+	int rowsA = A.size(), colsA = A[0].size();
+	int rowsB = B.size(), colsB = B[0].size();
+	vector<vector<int>> result(rowsA, vector<int>(colsB,0));
 
 	if (colsA != B.size()) {
 		cerr << "Error: Matrix dimensions mismatch for multiplication!" << endl;
@@ -565,4 +618,81 @@ vector<vector<int>> multiplyMatrix(const vector<vector<int>>& A, const vector<ve
 		}
 	}
 	return result;
+}
+void insertTerm(int coef, int exp) {
+	if (coef == 0) return; // 忽略系数为 0 的项
+
+	// 创建新节点
+	PolyNode* newNode = new PolyNode{ coef, exp, nullptr };
+
+	// 处理空链表情况
+	if (!head || exp > head->exponent) {
+		newNode->next = head;
+		head = newNode;
+		return;
+	}
+
+	// 在合适的位置插入
+	PolyNode* prev = nullptr;
+	PolyNode* curr = head;
+	while (curr && curr->exponent > exp) {
+		prev = curr;
+		curr = curr->next;
+	}
+
+	// 合并同类项
+	if (curr && curr->exponent == exp) {
+		curr->coefficient += coef;
+		if (curr->coefficient == 0) { // 如果系数变为 0，删除该项
+			if (prev) prev->next = curr->next;
+			else head = curr->next;
+			delete curr;
+		}
+		delete newNode; // 新节点不需要了
+	}
+	else {
+		// 插入新项
+		newNode->next = curr;
+		if (prev) prev->next = newNode;
+	}
+}
+
+// 输出多项式
+void printPolynomial() {
+	if (!head) {
+		cout << "0" << endl;
+		return;
+	}
+
+	PolyNode* curr = head;
+	bool first = true;
+
+	while (curr) {
+		// 处理正号
+		if (!first && curr->coefficient > 0) cout << "+";
+
+		// 输出系数
+		if (curr->exponent == 0 || abs(curr->coefficient) != 1)
+			cout << curr->coefficient;
+		else if (curr->coefficient == -1)
+			cout << "-"; // 省略 `-1x`
+
+		// 输出指数部分
+		if (curr->exponent > 0) {
+			cout << "x";
+			if (curr->exponent > 1) cout << "^" << curr->exponent;
+		}
+
+		curr = curr->next;
+		first = false;
+	}
+	cout << endl;
+}
+// 释放链表内存
+void freePolynomial() {
+	while (head) {
+		PolyNode* temp = head;
+		head = head->next;
+		delete temp;
+	}
 }
