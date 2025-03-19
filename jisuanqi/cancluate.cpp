@@ -25,63 +25,133 @@ double cal_rect_number(string& theStr, int theInt);		//ÇóÈı½Çº¯ÊıÀï°üº¬µÄÊı×Ö²¢Ç
 bool Judge_factorial(string& theStr);					//ÅĞ¶ÏÊÇ·ñÎªÇó½×³Ë
 int cal_factorial(int theInt);							//ÀûÓÃÊı×éÇó½×³Ë
 int cal_factorial_number(string& theStr);				// Çó½×³ËËùÇóµÄÊı×Ö
+string generate_random_expression(int num_terms);
+void quiz_mode();
+void Matrix();											//¾ØÕóÔËËã
+vector<vector<int>> inputMatrix(int& rows, int& cols, const string& name);//ÊäÈë¾ØÕó
+bool isValidMatrix(const vector<vector<int>>& mat);		//ÑéÖ¤¾ØÕóÓĞĞ§ĞÔ
+vector<vector<int>> addMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//£«¾ØÕó
+vector<vector<int>> subtractMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//-¾ØÕó
+vector<vector<int>> multiplyMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B);//*¾ØÕó
 
 
 int main()
 {
+	system("color F3");
 	cout << "»¶Ó­Ê¹ÓÃ¼ÆËãÆ÷" << endl;
-	cout << "Äã¿ÉÒÔÊ¹ÓÃÕâ¸ö¼ÆËãÆ÷×öÒ»Ğ©¼òµ¥µÄÔËËã" << endl;
-	cout << "Èç¹ûÄãÏëÍË³ö£¬ÊäÈë:exit¼´¿É..." << endl;
+	cout << "Ñ¡ÔñÄ£Ê½: 1-ÆÕÍ¨¼ÆËã 2-´ğÌâÄ£Ê½ 3-ÍË³ö\n";
 	while (true) {
-
-		//ÊäÈë±í´ïÊ½	
-		string init_exp;
-		cout << "---ÇëÊäÈë±í´ïÊ½:";
-		cin >> init_exp;
-
-		//ÅĞ¶ÏÊÇ·ñÒªÍË³ö
-		if (init_exp == string("exit")) {
-			cout << "¸ĞĞ»ÄúµÄÊ¹ÓÃ..." << endl;
-			break;
-		}
-
+		int choice;
+		cout << "ÇëÑ¡ÔñÄ£Ê½: 1-ÆÕÍ¨¼ÆËã 2-´ğÌâÄ£Ê½ 3-¾ØÕóÄ£Ê½ 4-¼ÆËãÈı½Çº¯Êı 5-ÍË³ö\n";
+		cin >> choice;
+		if (choice == 2) quiz_mode();
 		//ÅĞ¶ÏÊÇ·ñÈı½Çº¯ÊıºÍ·´Èı½Çº¯Êı²¢ÇóÖµ
-		else if (Judge_rectangle(init_exp) != 0) {
-			double res = 0;
-			res = cal_rect_number(init_exp, Judge_rectangle(init_exp));
-			if (res)
-				cout << "½á¹ûÎª: " << fixed << setprecision(9) << res << endl;
-		}
+		else if (choice == 4) {
+				//ÊäÈë±í´ïÊ½	
+				string init_exp;
+				cout << "---ÇëÊäÈëÈı½Çº¯Êı±í´ïÊ½:";
+				cin >> init_exp;
 
-		//Çó½×³ËµÄÇé¿ö
-		else if (Judge_factorial(init_exp)) {
-			int n = cal_factorial_number(init_exp);
-			cout << "½á¹ûÎª: ";
-			for (int i = cal_factorial(n); i > 0; i--)
-				cout << LargeNumberFactorial[i];
-			cout << endl;
+				double res = 0;
+				res = cal_rect_number(init_exp, Judge_rectangle(init_exp));
+				if (res)
+					cout << "½á¹ûÎª: " << fixed << setprecision(9) << res << endl;
 		}
-
 		//ÊÇ¼Ó¼õ³Ë³ıµÄÇé¿ö
+		else if(choice==1){
+				//ÊäÈë±í´ïÊ½	
+				string init_exp;
+				cout << "---ÇëÊäÈë±í´ïÊ½:";
+				cin >> init_exp;
+
+				cin.clear();
+				cin.sync();
+				while (!opt.empty()) {
+					opt.pop();
+				}
+				while (!val.empty()) {
+					val.pop();
+				}
+				del_space(init_exp);//È¥³ı¿Õ¸ñ
+				string cng_exp;
+				cng_exp.clear();
+				change(init_exp, cng_exp);	//×ª»»Îªºó×º±í´ïÊ½
+				compute(cng_exp);//¼ÆËãºó×º±í´ïÊ½
+		}
+		else if (choice == 3) {
+			Matrix();
+		}
 		else {
-			cin.clear();
-			cin.sync();
-			while (!opt.empty()) {
-				opt.pop();
-			}
-			while (!val.empty()) {
-				val.pop();
-			}
-			del_space(init_exp);//È¥³ı¿Õ¸ñ
-			string cng_exp;
-			cng_exp.clear();
-			change(init_exp, cng_exp);	//×ª»»Îªºó×º±í´ïÊ½
-			compute(cng_exp);//¼ÆËãºó×º±í´ïÊ½
-			double stdans = val.top();
-			cout << "½á¹ûÎª:" << (double)stdans << endl;
+			return 0;
 		}
 	}
-	return 0;
+}
+void Matrix() {
+	cout << "¾ØÕóÔËËãÑ¡Ôñ" << endl;
+	cout << "1.¾ØÕó¼Ó·¨\t2.¾ØÕó¼õ·¨\t3.¾ØÕó³Ë·¨" << endl;
+	int signal;
+	cin >> signal;
+	// ÊäÈëµÚÒ»¸ö¾ØÕó
+	int rowsA, colsA;
+	auto matrixA = inputMatrix(rowsA, colsA, "Matrix A");
+
+	// ÊäÈëµÚ¶ş¸ö¾ØÕó
+	int rowsB, colsB;
+	auto matrixB = inputMatrix(rowsB, colsB, "Matrix B");
+
+	// Ë«ÖØÑéÖ¤
+	if (!isValidMatrix(matrixA) || !isValidMatrix(matrixB)) {
+		cerr << "Error: Invalid matrix structure\n";
+		exit(0);
+	}
+	if (signal == 1) {
+	
+	}
+	else if (signal == 2) {
+
+	}
+	else if (signal == 3) {
+
+	}
+	else {
+		exit(0);
+	}
+	Matrix();
+}
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// ÊäÈëµ¥¸ö¾ØÕó
+vector<vector<int>> inputMatrix(int& rows, int& cols, const string& name) {
+	cout << "ÊäÈë¾ØÕó" << name << " µÄĞĞºÍÁĞ£¬¿Õ¸ñ·Ö¿ª: ";
+	while (!(cin >> rows >> cols) || rows <= 0 || cols <= 0) {
+		cin.clear();
+		cin.ignore(1024, '\n');
+		cout << "Invalid input! Re-enter dimensions (positive integers): ";
+	}
+
+	vector<vector<int>> mat(rows, vector<int>(cols));
+	cout << "°´ÕÕ¾ØÕóµÄ " << rows << "x" << cols << " ¸ñÊ½ÊäÈëÊı¾İ:\n";
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < cols; ++j) {
+		bool a111=scanf_s("%d", &mat[i][j]);
+		if (!a111) {
+			exit(0);
+		}
+		}
+	}
+	return mat;
+}
+
+// ÑéÖ¤¾ØÕóÓĞĞ§ĞÔ
+bool isValidMatrix(const vector<vector<int>>& mat) {
+//	if (mat.empty()) return false;
+//	size_t cols = mat.size();
+//	for (const auto& row : mat) {
+//		if (row.size() != cols) return false;
+//	}
+	return true;
 }
 
 /*ÎªÃ¿Ò»¸ö²Ù×÷·û·µ»ØÒ»¸öÊı£¬Êı´ú±íÁËÓÅÏÈ¼¶*/
@@ -372,4 +442,127 @@ int cal_factorial(int theInt)
 		}
 	}
 	return digit;
+}
+
+
+string generate_random_expression(int num_terms = 5) {
+	string operators = "+-*/";
+	string expression;
+	ostringstream oss;
+	int open_brackets = 0;
+
+	for (int i = 0; i < num_terms; i++) {
+		// Ëæ»ú¾ö¶¨ÊÇ·ñ¼Ó×óÀ¨ºÅ (×î¶à 2 ²ãÀ¨ºÅ)
+		if (rand() % 4 == 0 && open_brackets < 2 && i < num_terms - 1) {
+			expression += "(";
+			open_brackets++;
+		}
+
+		// Éú³ÉÒ»¸öËæ»úÊı 1~10
+		oss.str("");  // Çå¿ÕÖ®Ç°µÄÄÚÈİ
+		oss << (rand() % 10 + 1);
+		expression += oss.str();
+
+		// Ëæ»ú¾ö¶¨ÊÇ·ñ¼ÓÓÒÀ¨ºÅ (²»ÄÜÔÚµÚÒ»¸öÊıºóÁ¢¼´¼Ó)
+		if (open_brackets > 0 && rand() % 4 == 0 && i > 0) {
+			expression += ")";
+			open_brackets--;
+		}
+
+		// ²»ÊÇ×îºóÒ»¸öÊıÊ±£¬Ìí¼ÓÔËËã·û
+		if (i < num_terms - 1) {
+			expression += operators[rand() % 4];
+		}
+	}
+
+	// ¹Ø±ÕÎ´Æ¥ÅäµÄÀ¨ºÅ
+	while (open_brackets > 0) {
+		expression += ")";
+		open_brackets--;
+	}
+
+	return expression;
+}
+// ½øĞĞ´ğÌâÄ£Ê½
+void quiz_mode() {
+	while (true) {
+		string question = generate_random_expression();
+		cout << "¼ÆËã: " << question << " = ? (ÊäÈëexitÍË³ö)\n";
+		string answer;
+		cin >> answer;
+		if (answer == "exit") break;
+
+		string postfix;
+		change(question, postfix);
+		compute(postfix);
+		double correct_answer = val.top();
+
+		stringstream ss(answer);
+		double user_answer;
+		ss >> user_answer;
+
+		if (abs(user_answer - correct_answer) < 1e-6) {
+			cout << "ÕıÈ·£¡\n";
+		}
+		else {
+			cout << "´íÎó£¬ÕıÈ·´ğ°¸ÊÇ: " << correct_answer << "\n";
+		}
+	}
+}
+
+
+// ¾ØÕó¼Ó·¨
+vector<vector<int>> addMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
+	int rows = A.size(), cols = A.size();
+	vector<vector<int>> result(rows, vector<int>(cols));
+
+	if (A.size() != B.size() || A.size() != B.size()) {
+		cerr << "Error: Matrix dimensions mismatch for addition!" << endl;
+		return {};
+	}
+
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < cols; ++j) {
+			result[i][j] = A[i][j] + B[i][j];
+		}
+	}
+	return result;
+}
+// ¾ØÕó¼õ·¨
+vector<vector<int>> subtractMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
+	int rows = A.size(), cols = A.size();
+	vector<vector<int>> result(rows, vector<int>(cols));
+
+	if (A.size() != B.size() || A.size() != B.size()) {
+		cerr << "Error: Matrix dimensions mismatch for addition!" << endl;
+		return {};
+	}
+
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < cols; ++j) {
+			result[i][j] = A[i][j] - B[i][j];
+		}
+	}
+	return result;
+}
+// ¾ØÕó³Ë·¨ 
+//¾ØÕó³Ë·¨ÒªÇóµÚÒ»¸ö¾ØÕóµÄÁĞÊıµÈÓÚµÚ¶ş¸ö¾ØÕóµÄĞĞÊı£¬½á¹û¾ØÕóµÄÎ¬¶ÈÎª (AĞĞÊı ¡Á BÁĞÊı)¡£
+vector<vector<int>> multiplyMatrix(const vector<vector<int>>& A, const vector<vector<int>>& B) {
+	int rowsA = A.size(), colsA = A.size();
+	int colsB = B.size();
+	vector<vector<int>> result(rowsA, vector<int>(colsB, 0));
+
+	if (colsA != B.size()) {
+		cerr << "Error: Matrix dimensions mismatch for multiplication!" << endl;
+		return {};
+	}
+
+	for (int i = 0; i < rowsA; ++i) {
+		for (int j = 0; j < colsB; ++j) {
+			for (int k = 0; k < colsA; ++k) {
+				result[i][j] += A[i][k] * B[k][j];
+			}
+		}
+	}
+	return result;
 }
