@@ -1,11 +1,12 @@
 ﻿  cancluate.cpp
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(397,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(516,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(516,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(533,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(533,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(551,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(551,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(552,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(172,1): warning C4715: “level”: 不是所有的控件路径都返回值
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(431,10): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(569,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(569,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(586,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(586,28): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(604,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(604,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(605,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(605,30): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\cancluate.cpp(206,1): warning C4715: “level”: 不是所有的控件路径都返回值
   jisuanqi.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\jisuanqi\x64\Debug\jisuanqi.exe
