@@ -3,7 +3,7 @@ using namespace std;
 
 const int LANE_COUNT = 3;   // 每个方向3个车道
 const int ROAD_LENGTH = 50; // 道路长度
-const int STOP_PROB = 5;    // 停止概率5%
+const int STOP_PROB = 1;    // 停止概率5%
 
 class Vehicle {
 private:
