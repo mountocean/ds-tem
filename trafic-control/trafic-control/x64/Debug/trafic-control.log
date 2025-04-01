@@ -1,3 +1,6 @@
-﻿  forward.cpp
+﻿  control.cpp
+  center.cpp
+  forward.cpp
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\forward.cpp(177,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
   trafic-control.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\x64\Debug\trafic-control.exe
