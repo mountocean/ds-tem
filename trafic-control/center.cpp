@@ -8,6 +8,9 @@ int main() {
 	if (panduan == 1) {
 		main1();
 	}
+	else if (panduan == 2) {
+		main2();
+	}
 	else {
 		return 0;
 	}

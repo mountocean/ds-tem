@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="forward.cpp">
+    <ClCompile Include="control.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="center.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="control.cpp">
+    <ClCompile Include="forward.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
