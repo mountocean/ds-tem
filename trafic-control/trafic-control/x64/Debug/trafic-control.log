@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  center.cpp
   control.cpp
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\control.cpp(399,40): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
@@ -5,6 +6,10 @@ D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\control.cpp(399,40): warning C4267:         [
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\control.cpp(399,40): warning C4267:             _Ty=int
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\control.cpp(399,40): warning C4267:         ]
+=======
+﻿  control.cpp
+  center.cpp
+>>>>>>> 67dace97a0c674d25d2dccf4e0420451dd328196
   forward.cpp
 D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\forward.cpp(177,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
   正在生成代码...
