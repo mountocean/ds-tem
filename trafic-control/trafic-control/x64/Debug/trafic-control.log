@@ -1,2 +1,179 @@
-﻿  代码生成@xiaoyi.huawei.com_20250326081355.cpp
-  trafic-control.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\x64\Debug\trafic-control.exe
+﻿  代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(35,16): error C2061: 语法错误: 标识符“Direction”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(29,36): error C2065: “cout_mutex”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(36,33): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(36,40): error C2065: “NORTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(36,49): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(36,56): error C2065: “SOUTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(37,22): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(37,29): error C2065: “EAST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(37,37): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(37,44): error C2065: “WEST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(45,15): error C3646: “dir”: 未知重写说明符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(45,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(52,37): error C2061: 语法错误: 标识符“Direction”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(56,15): error C3646: “getDir”: 未知重写说明符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(56,21): error C2059: 语法错误:“(”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(56,30): error C2334: “{”的前面有意外标记；跳过明显的函数体
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(53,51): error C2065: “d”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(53,47): error C2614: “Vehicle”: 非法的成员初始化:“dir”不是基或成员
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(61,16): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(61,16): error C2050: switch 表达式不是整型 
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(62,18): error C2065: “NORTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(62,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(62,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(63,18): error C2065: “SOUTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(63,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(63,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(64,18): error C2065: “EAST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(64,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(64,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(65,18): error C2065: “WEST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(65,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(65,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(62,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(63,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(64,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(65,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(66,9): warning C4060: switch 语句没有包含“case”或“default”标签
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(104,29): error C2001: 常量中有换行符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(106,29): error C2001: 常量中有换行符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(117,41): error C2001: 常量中有换行符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(142,21): error C2061: 语法错误: 标识符“Direction”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(200,5): error C2628: “IntersectionSystem”后面接“void”是非法的(是否忘记了“;”?)
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(202,32): error C2061: 语法错误: 标识符“Direction”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(105,17): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(107,17): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(112,52): error C2676: 二进制“[”:“std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>”不定义该运算符或到预定义运算符可接收的类型的转换
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(118,33): error C2146: 语法错误: 缺少“;”(在标识符“found”的前面)
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(147,16): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(147,16): error C2050: switch 表达式不是整型 
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(148,18): error C2065: “NORTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(148,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(148,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(152,18): error C2065: “SOUTH”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(152,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(152,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(156,18): error C2065: “EAST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(156,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(156,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(160,18): error C2065: “WEST”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(160,18): error C2131: 表达式的计算结果不是常数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(160,18):
+      遇到非常量(子)表达式
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(165,16): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(165,45): error C2065: “dir”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(148,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(152,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(156,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(160,18): error C2051: case 表达式不是常量
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(164,9): warning C4060: switch 语句没有包含“case”或“default”标签
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(175,28): error C2065: “d”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(176,33): error C2065: “d”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(177,17): error C3536: “v”: 初始化之前无法使用
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(180,23): error C2429: 语言功能 "结构化绑定" 需要编译器标志 "/std:c++17"
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(181,52): error C2660: “TrafficLight::canGo”: 函数不接受 1 个参数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(35,10):
+      参见“TrafficLight::canGo”的声明
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(181,52):
+      尝试匹配参数列表“()”时
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(186,41): error C3536: “newPos”: 初始化之前无法使用
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(186,26): error C2660: “IntersectionSystem::checkCollision”: 函数不接受 1 个参数
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(132,10):
+      参见“IntersectionSystem::checkCollision”的声明
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(186,26):
+      尝试匹配参数列表“()”时
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(187,42): error C7732: expected an expression before ']'
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(187,57): error C7732: expected an expression before ']'
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,27): error C2665: “std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>::push”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(122,10):
+      可能是“void std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>::push(Vehicle &&)”
+          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,27):
+          “void std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>::push(Vehicle &&)”: 无法将参数 1 从“int”转换为“Vehicle &&”
+              C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+              原因如下: 无法从“int”转换为“Vehicle”
+              C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+              “Vehicle::Vehicle”: 没有重载函数可以转换所有参数类型
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(87,1):
+                  可能是“Vehicle::Vehicle(Vehicle &&)”
+                      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                      “Vehicle::Vehicle(Vehicle &&)”: 无法将参数 1 从“int”转换为“Vehicle &&”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          原因如下: 无法从“int”转换为“Vehicle”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          转换要求第二个用户定义的转换运算符或构造函数
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(87,1):
+                  或    “Vehicle::Vehicle(const Vehicle &)”
+                      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                      “Vehicle::Vehicle(const Vehicle &)”: 无法将参数 1 从“int”转换为“const Vehicle &”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          原因如下: 无法从“int”转换为“const Vehicle”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          转换要求第二个用户定义的转换运算符或构造函数
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                  尝试匹配参数列表“(int)”时
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(118,10):
+      或    “void std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>::push(const Vehicle &)”
+          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,27):
+          “void std::queue<Vehicle,std::deque<Vehicle,std::allocator<Vehicle>>>::push(const Vehicle &)”: 无法将参数 1 从“int”转换为“const Vehicle &”
+              C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+              原因如下: 无法从“int”转换为“const Vehicle”
+              C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+              “Vehicle::Vehicle”: 没有重载函数可以转换所有参数类型
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(87,1):
+                  可能是“Vehicle::Vehicle(Vehicle &&)”
+                      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                      “Vehicle::Vehicle(Vehicle &&)”: 无法将参数 1 从“int”转换为“Vehicle &&”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          原因如下: 无法从“int”转换为“Vehicle”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          转换要求第二个用户定义的转换运算符或构造函数
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(87,1):
+                  或    “Vehicle::Vehicle(const Vehicle &)”
+                      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                      “Vehicle::Vehicle(const Vehicle &)”: 无法将参数 1 从“int”转换为“const Vehicle &”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          原因如下: 无法从“int”转换为“const Vehicle”
+                          C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                          转换要求第二个用户定义的转换运算符或构造函数
+                  C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,32):
+                  尝试匹配参数列表“(int)”时
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(193,27):
+      尝试匹配参数列表“(int)”时
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(194,24): error C2065: “d”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(196,20): error C2065: “d”: 未声明的标识符
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(204,1): error C2059: 语法错误:“}”
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(204,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(210,20): error C2039: "autoGenerate": 不是 "IntersectionSystem" 的成员
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(91,7):
+      参见“IntersectionSystem”的声明
+  
+C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(217,16): error C2248: “IntersectionSystem::printGrid”: 无法访问 private 成员(在“IntersectionSystem”类中声明)
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(98,10):
+      参见“IntersectionSystem::printGrid”的声明
+      C:\Users\lth23\Downloads\代码生成@xiaoyi.huawei.com_20250401093038 (1).cpp(91,7):
+      参见“IntersectionSystem”的声明
+  
+  center.cpp
+  forward.cpp
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\trafic-control\forward.cpp(177,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
