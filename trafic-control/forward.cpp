@@ -35,7 +35,7 @@ public:
     void maybeStop() {
         if (rand() % 100 < STOP_PROB) {
             isStopped = true;
-            stopEndTime = chrono::steady_clock::now() + chrono::seconds(3);
+            stopEndTime = chrono::steady_clock::now() + chrono::seconds(1);
         }
     }
 
@@ -179,14 +179,14 @@ void main1() {
     int timeCounter = 0;
 
     while (true) {
-        if (timeCounter % 8 == 0) {  // 调整车辆生成频率
+        if (timeCounter % 100 == 0) {  // 调整车辆生成频率
             system.addVehicle(rand() % 2);
         }
 
         system.updateLanes();
         system.printRoad();
 
-        this_thread::sleep_for(chrono::milliseconds(200));
+        this_thread::sleep_for(chrono::microseconds(100000));
         timeCounter++;
     }
 }
