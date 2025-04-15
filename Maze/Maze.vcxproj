@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="head.h" />
-    <ClCompile Include="maze.cpp" />
+    <ClCompile Include="maze1.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="zidong.cpp" />
   </ItemGroup>

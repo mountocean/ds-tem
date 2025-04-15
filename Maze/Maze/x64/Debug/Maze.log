@@ -1,20 +1,5 @@
-﻿  double.cpp
-  maze.cpp
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(82,37): error C3861: “adjustPosition”: 找不到标识符
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(83,37): error C3861: “adjustPosition”: 找不到标识符
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(90,6): error C3861: “checkEndPos”: 找不到标识符
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(90,35): error C3861: “checkEndPos”: 找不到标识符
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(91,3): error C3861: “showVictory”: 找不到标识符
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(107,2): error C2660: “drawPlayer”: 函数不接受 2 个参数
-      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(45,6):
-      参见“drawPlayer”的声明
-      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(107,2):
-      尝试匹配参数列表“(POINT, DWORD)”时
-  
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(108,2): error C2660: “drawPlayer”: 函数不接受 2 个参数
-      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(45,6):
-      参见“drawPlayer”的声明
-      D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\double.cpp(108,2):
-      尝试匹配参数列表“(POINT, DWORD)”时
-  
+﻿  maze1.cpp
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\maze1.cpp(496,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  mian.cpp
   正在生成代码...
+  Maze.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\Maze\x64\Debug\Maze.exe

@@ -60,21 +60,6 @@ void drawView();
 // 新增：自动寻路
 vector<POINT> findPath();   // 使用 BFS 算法，在网格上计算从当前单元格到终点的最短路径
 
-int main()
-{
-    initGame();
-
-    while (1)
-    {
-        if (!upDate()) break;   // 更新数据
-        draw();                 // 绘制画面
-        absDelay(16);           // 绝对延迟 16 毫秒，控制帧率约 60 FPS
-    }
-
-    endGame();
-    return 0;
-}
-
 void initGame()
 {
     g_BlockSize = 32;           // 初始图块大小为 32 像素
@@ -197,9 +182,9 @@ void draw()
 
 bool upDate()
 {
-    // 检测 A 键：用于切换自动寻路模式（开启或关闭）
+    // 检测 P 键：用于切换自动寻路模式（开启或关闭）
     // 使用 GetAsyncKeyState 检测按键“按下时边沿”
-    if (GetAsyncKeyState('A') & 1)
+    if (GetAsyncKeyState('P') & 1)
     {
         if (g_autoMode)
         {
