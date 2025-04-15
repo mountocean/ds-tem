@@ -5,6 +5,7 @@ using std::stack;				// 使用STL的栈
 using std::vector;				// 使用STL的数组容器
 
 
+
 // 游戏信息
 #define WIN_WIDTH	400			// 窗口的宽度(单位：像素)
 #define WIN_HEIGHT	300			// 窗口的高度(单位：像素)
@@ -51,21 +52,6 @@ void drawFillState(POINT pos);	// 绘制油灯图块的函数
 void drawEndPos(POINT pos);		// 绘制终点
 void drawPlayer();				// 绘制人物的函数
 void drawView();				// 绘制视野
-
-int main()
-{
-	initGame();
-
-	while (1)
-	{
-		if (!upDate()) break;	// 更新
-		draw();					// 绘制
-		absDelay(16);			// 绝对延迟 16 毫秒，控制每秒 60 帧
-	}
-
-	endGame();
-	return 0;
-}
 
 void initGame()
 {

@@ -18,5 +18,14 @@
     <ClCompile Include="maze.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="zidong.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mian.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="head.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
