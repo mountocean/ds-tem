@@ -129,8 +129,6 @@
   <ItemGroup>
     <ClCompile Include="head.h" />
     <ClCompile Include="maze1.cpp" />
-    <ClCompile Include="mian.cpp" />
-    <ClCompile Include="zidong.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
