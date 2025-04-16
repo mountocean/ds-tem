@@ -8,8 +8,8 @@ using std::vector;
 using std::queue;
 
 // 游戏信息
-#define WIN_WIDTH   400         // 窗口宽度(像素)
-#define WIN_HEIGHT  300         // 窗口高度(像素)
+#define WIN_WIDTH   800         // 窗口宽度(像素)
+#define WIN_HEIGHT  600         // 窗口高度(像素)
 // 注意：由于随机生成算法的原因，地图宽高只能为奇数
 #define GAME_WIDTH  11          // 地图宽度(块)
 #define GAME_HEIGHT 11          // 地图高度(块)
