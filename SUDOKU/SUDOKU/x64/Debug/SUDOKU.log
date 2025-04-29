@@ -1,5 +1,9 @@
 ﻿  SUDUKU.cpp
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(201,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(186,1): warning C4715: “dfs”: 不是所有的控件路径都返回值
-D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(198,1): warning C4715: “work”: 不是所有的控件路径都返回值
-  SUDOKU.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\x64\Debug\SUDOKU.exe
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(208,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(268,29): warning C4244: “初始化”: 从“_Rep”转换到“double”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(268,29): warning C4244:         with
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(268,29): warning C4244:         [
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(268,29): warning C4244:             _Rep=__int64
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(268,29): warning C4244:         ]
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(281,13): error C3861: “getline”: 找不到标识符
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(285,13): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
