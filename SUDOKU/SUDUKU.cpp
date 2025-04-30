@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <windows.h>
 #include <ctime>  // 包含计时所需的库
+#include <mmsystem.h>
+#pragma comment(lib, "winmm.lib")
 using namespace std;
 
 clock_t start_time, current_time, end_time;
@@ -31,7 +33,7 @@ void print() {
     current_time = clock();
     double elapsed = double(current_time - start_time) / CLOCKS_PER_SEC;
     SetColor(14);
-    printf("Elapsed Time: %.1f s\n", elapsed);
+    printf("操作上一步已用时长: %.1f s\n", elapsed);
     SetColor(15);
 
     // 原有网格绘制
@@ -62,7 +64,7 @@ void print() {
         cout << endl;
         if (i == 3 || i == 6) {
             SetColor(9);
-            cout << "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" << endl;
+            cout << "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" << endl;
             SetColor(15);
             continue;
         }
@@ -121,7 +123,7 @@ void print_y() {
         cout << endl;
         if (i == 3 || i == 6) {
             SetColor(9);
-            cout << "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" << endl;
+            cout << "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" << endl;
             SetColor(15);
             continue;
         }
@@ -172,6 +174,35 @@ int dfs(int x, int y)
     if (a[x][y] != 0) if (y == 1) dfs(x - 1, 9); else dfs(x, y - 1);
 }
 
+int work(int x) {
+    if (x == 10) {
+        return 0;
+    }
+    int i = 1;
+    int y = rand() % 9 + 1;
+    while (!f[y]) y = rand() % 9 + 1;
+    f[y] = false;
+    c[x] = y;
+    work(x + 1);
+}
+
+void init() {
+    srand(time(NULL));
+    memset(a, 0, sizeof(a));
+    memset(lie, true, sizeof(lie));
+    memset(hang, true, sizeof(hang));
+    memset(square, true, sizeof(square));
+    memset(f, true, sizeof(f));
+    check = true;
+    work(1);
+    memset(a, sizeof(a), 0);
+    check = true;
+    dfs(9, 9);
+    memcpy(a, ans, sizeof(ans));
+    printf("请选择难度，从 1-3\n");
+    difficult = 0;
+    while (difficult > 3 || difficult < 1) cin >> difficult;
+}
 
 void run() {
     int sum = 0;
@@ -195,6 +226,7 @@ void run() {
 }
 
 int main() {
+    PlaySound(TEXT("newway2.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
     init();
     run();
     system("cls");
@@ -227,6 +259,7 @@ int main() {
             break;
         }
     }
+    PlaySound(NULL, 0, 0);
     system("pause");
     return 0;
 }
