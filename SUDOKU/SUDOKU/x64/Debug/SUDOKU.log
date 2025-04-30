@@ -1,5 +1,5 @@
 ﻿  SUDUKU.cpp
-E:\DSpractice\ds-tem\SUDOKU\SUDUKU.cpp(205,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-E:\DSpractice\ds-tem\SUDOKU\SUDUKU.cpp(190,1): warning C4715: “dfs”: 不是所有的控件路径都返回值
-E:\DSpractice\ds-tem\SUDOKU\SUDUKU.cpp(202,1): warning C4715: “work”: 不是所有的控件路径都返回值
-  SUDOKU.vcxproj -> E:\DSpractice\ds-tem\SUDOKU\x64\Debug\SUDOKU.exe
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(188,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(173,1): warning C4715: “dfs”: 不是所有的控件路径都返回值
+D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\SUDUKU.cpp(185,1): warning C4715: “work”: 不是所有的控件路径都返回值
+  SUDOKU.vcxproj -> D:\HuaweiMoveData\Users\lth23\Desktop\小程序\vs2022\dsproject\SUDOKU\x64\Debug\SUDOKU.exe

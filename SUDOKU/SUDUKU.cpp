@@ -172,6 +172,35 @@ int dfs(int x, int y)
     if (a[x][y] != 0) if (y == 1) dfs(x - 1, 9); else dfs(x, y - 1);
 }
 
+int work(int x) {
+    if (x == 10) {
+        return 0;
+    }
+    int i = 1;
+    int y = rand() % 9 + 1;
+    while (!f[y]) y = rand() % 9 + 1;
+    f[y] = false;
+    c[x] = y;
+    work(x + 1);
+}
+
+void init() {
+    srand(time(NULL));
+    memset(a, 0, sizeof(a));
+    memset(lie, true, sizeof(lie));
+    memset(hang, true, sizeof(hang));
+    memset(square, true, sizeof(square));
+    memset(f, true, sizeof(f));
+    check = true;
+    work(1);
+    memset(a, sizeof(a), 0);
+    check = true;
+    dfs(9, 9);
+    memcpy(a, ans, sizeof(ans));
+    printf("请选择难度，从 1-3\n");
+    difficult = 0;
+    while (difficult > 3 || difficult < 1) cin >> difficult;
+}
 
 void run() {
     int sum = 0;
